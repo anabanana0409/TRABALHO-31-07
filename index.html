@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas Rosa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <section class="conteudo">
+        <div class="conteudo-titulo">
+            <img src="unlock.svg" alt="cadeado rosa" class="cadeado-icon">
+            <h2 class="titulo-principal">Gerador de Senhas</h2>
+            <h3 class="titulo-secundario">Crie senhas lindas e seguras</h3>
+        </div>
+        
+        <div class="conteudo-senha">
+            <div class="senha-container">
+                <input type="text" id="campo-senha" readonly>
+                <button id="copiar-senha" title="Copiar senha">
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+            <div class="senha-forca">
+                <div class="barra-forca">
+                    <div id="indicador-forca" class="fraca"></div>
+                </div>
+                <span id="texto-forca">Fraca</span>
+            </div>
+        </div>
+        
+        <div class="parametro">
+            <h3 class="parametro-titulo">Personalize sua senha</h3>
+            
+            <div class="parametro-coluna__senha">
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Tamanho: <span id="tamanho-valor">12</span></h4>
+                    <div class="parametro-senha-botoes">
+                        <button class="parametro-senha__botao" id="diminuir">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <input type="range" min="4" max="32" value="12" id="tamanho-slider" class="slider">
+                        <button class="parametro-senha__botao" id="aumentar">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Tipos de caracteres</h4>
+                    <div class="checkbox-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="maiusculo" class="checkbox" checked>
+                            <span class="checkmark"></span>
+                            Letras MAIÚSCULAS
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="minusculo" class="checkbox" checked>
+                            <span class="checkmark"></span>
+                            Letras minúsculas
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="numero" class="checkbox">
+                            <span class="checkmark"></span>
+                            Números (0-9)
+                        </label>
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="simbolo" class="checkbox">
+                            <span class="checkmark"></span>
+                            Símbolos (!@#$)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="gerar-senha" class="btn-gerar">
+                <i class="fas fa-magic"></i> Gerar Senha
+            </button>
+        </div>
+    </section>
+
+    <div id="toast" class="toast">Senha copiada! <i class="fas fa-heart"></i></div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
